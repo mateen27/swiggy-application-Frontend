@@ -5,8 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import Carousel from "../components/Carousel";
 import FoodTypes from "../components/FoodTypes";
 import QuickFood from "../components/QuickFood";
+import hotels from '../data/hotels'
+import MenuItem from "../components/MenuItem";
 
 const HomeScreen = () => {
+    const data = hotels;
   return (
     <ScrollView style={{ marginTop : 50 }}>
       {/* Search Bar */}
@@ -42,6 +45,13 @@ const HomeScreen = () => {
             <Text>Sort By Price</Text>
         </Pressable>
       </View>
+
+      {/* MenuItems */}
+      {
+        data.map((item , index) => (
+            <MenuItem index={index} item = {item}/>
+        ))
+      }
     </ScrollView>
   );
 };
